@@ -20,7 +20,7 @@
                 margin: 20px auto;
             }
             .avatar-container .image {
-                background-image: url('//app-layout-assets.appspot.com/assets/pesto/avatar.jpg');
+                background-image: url('/static/favicon.ico');
                 background-size: contain;
                 border-radius: 50%;
                 height: 100%;
@@ -54,6 +54,7 @@
             }
         </style>
 
+
         <app-location route="{{_route}}" use-hash-as-path></app-location>
         <app-route
                 route="{{_route}}"
@@ -65,6 +66,8 @@
                 pattern="/:id"
                 data="{{_idData}}"></app-route>
 
+
+        <h3>Hello BSS APP</h3>
         <app-drawer-layout responsive-width="1280px">
 
             <app-drawer id="drawer" swipe-open slot="drawer">
@@ -102,17 +105,26 @@
 
                     <iron-pages selected="[[_selectedPage]]" attr-for-selected="name">
 
-                        <recipe-list name="home">
+                        <bss-home name="home">
                             <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
-                        </recipe-list>
+                        </bss-home>
+                        <bss-test-create name="create">
+                            <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+                        </bss-test-create>
+                        <bss-test-list name="list">
+                            <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+                        </bss-test-list>
+                        <!--<recipe-list name="home">-->
+                            <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+                        <!--</recipe-list>-->
 
-                        <recipe-list name="create">
-                            <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
-                        </recipe-list>
+                        <!--<recipe-list name="create">-->
+                            <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+                        <!--</recipe-list>-->
 
-                        <recipe-list name="list">
-                            <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
-                        </recipe-list>
+                        <!--<recipe-list name="list">-->
+                            <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+                        <!--</recipe-list>-->
 
                         <!--<recipe-list name="trending">-->
                             <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
@@ -128,7 +140,6 @@
 </dom-module>
 
 <script>
-
     Polymer({
         is: "bss-app",
         properties: {
@@ -181,8 +192,6 @@
         }
 
     });
-
-
 
 </script>
 

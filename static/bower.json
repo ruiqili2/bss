@@ -6,7 +6,7 @@
   "license": "https://polymer.github.io/LICENSE.txt",
   "dependencies": {
     "app-layout": "PolymerElements/app-layout#^2.0.4",
-    "app-route": "PolymerElements/app-route#^2.0.0",
+    "app-route": "PolymerElements/app-route#^2.0.3",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0",
     "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^2.0.0",
     "iron-media-query": "PolymerElements/iron-media-query#^2.0.0",
@@ -34,7 +34,13 @@
     "paper-item": "PolymerElements/paper-item#^2.0.0",
     "paper-toast": "PolymerElements/paper-toast#^2.0.0",
     "paper-toggle-button": "PolymerElements/paper-toggle-button#^2.0.0",
-    "paper-password-input": "Collaborne/paper-password-input#^2.2.0"
+    "paper-password-input": "Collaborne/paper-password-input#^2.2.0",
+    "paper-fab": "PolymerElements/paper-fab#^2.0.0",
+    "iron-data-table": "Saulis/iron-data-table#^1.0.7",
+    "iron-form": "PolymerElements/iron-form#^2.0.1",
+    "google-signin": "GoogleWebComponents/google-signin#^2.0.0",
+    "polymerfire": "firebase/polymerfire#^2.2.1",
+    "paper-listbox": "PolymerElements/paper-listbox#^2.0.0"
   },
   "resolutions": {
     "polymer": "^2.0.0"

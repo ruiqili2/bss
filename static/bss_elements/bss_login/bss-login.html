@@ -1,0 +1,60 @@
+<!--<dom-module id="bss-login">-->
+    <!--<style>-->
+
+    <!--</style>-->
+    <!--<template>-->
+        <!--<h1>This is a login page!</h1>-->
+        <!--<firebase-auth id="authElement" user="{{user}}"-->
+                       <!--status-known="{{statusKnown}}" provider="google">-->
+        <!--</firebase-auth>-->
+        <!--<paper-button class="signInButton" raised on-tap="signin" hidden$="[[user]]"><img src="images/google.svg">Sign In-->
+        <!--</paper-button>-->
+
+    <!--</template>-->
+    <!--<script>-->
+        <!--class BssLogin extends Polymer.Element {-->
+            <!--static get is() {-->
+                <!--return 'bss-login';-->
+            <!--}-->
+
+            <!--static get config() {-->
+                <!--return {-->
+                    <!--properties: {-->
+
+                    <!--}-->
+                <!--};-->
+            <!--}-->
+
+            <!--signin() {-->
+                <!--return this.$.authElement.signInWithPopup();-->
+            <!--}-->
+
+            <!--connectedCallback() {-->
+                <!--super.connectedCallback();-->
+                <!--requestAnimationFrame(this._installListeners.bind(this));-->
+            <!--}-->
+
+            <!--_installListeners() {-->
+                <!--this.$.authElement.auth-->
+                    <!--.onAuthStateChanged(this._authStateChanged.bind(this));-->
+
+                <!--window.addEventListener('signout', this._onSignout.bind(this));-->
+            <!--}-->
+
+            <!--_authStateChanged() {-->
+                <!--this.$.authElement.fire('auth-changed', {-->
+                    <!--user: this.user-->
+                <!--});-->
+            <!--}-->
+
+
+            <!--_onSignout() {-->
+                <!--return this.$.authElement.signOut();-->
+            <!--}-->
+
+        <!--}-->
+        <!--customElements.define(BssLogin.is, BssLogin);-->
+
+
+    <!--</script>-->
+<!--</dom-module>-->
