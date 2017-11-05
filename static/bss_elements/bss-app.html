@@ -25,14 +25,15 @@
                 signed-in="{{signedIn}}"
                 user="{{user}}">
         </firebase-auth>
-
         <app-drawer-layout responsive-width="1280px">
+
             <app-drawer id="drawer" swipe-open slot="drawer">
                 <bss-sidebar
                         signed-in="[[signedIn]]"
                         on-sign-out="signOut"
                         user="[[user]]">
                 </bss-sidebar>
+
             </app-drawer>
 
             <app-header-layout style="margin:-8px;">
@@ -50,6 +51,7 @@
 
                     <bss-layout user="[[user]]"></bss-layout>
                 </app-header>
+
             </app-header-layout>
 
 

@@ -58,7 +58,7 @@
                 <div class="image"></div>
             </div>
             <div class="contact-info">
-                <div class="name">[[user.displayName]]</div>
+                <div class="name">[[_returnName(user)]]</div>
                 <div class="email">[[user.email]]</div>
             </div>
 
@@ -96,6 +96,14 @@
                     value: false
                 }
             },
+            _returnName: function(profile) {
+                if(profile === null) {
+                    return "Please log in";
+                }
+                else {
+                    return profile.displayName;
+                }
+            }
 
 
         });

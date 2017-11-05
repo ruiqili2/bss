@@ -1,0 +1,125 @@
+<!--<dom-module id="bss-mainpages">-->
+    <!--<template>-->
+
+        <!--<style>-->
+
+
+        <!--</style>-->
+
+        <!--<firebase-auth user="{{user}}"></firebase-auth>-->
+
+        <!--<app-location route="{{_route}}" use-hash-as-path></app-location>-->
+        <!--<app-route-->
+                <!--route="{{_route}}"-->
+                <!--pattern="/:page"-->
+                <!--data="{{_pageData}}"-->
+                <!--tail="{{_subRoute}}"></app-route>-->
+        <!--<app-route-->
+                <!--route="{{_subRoute}}"-->
+                <!--pattern="/:id"-->
+                <!--data="{{_idData}}"></app-route>-->
+
+
+
+
+        <!--<iron-pages selected="[[_selectedPage]]" attr-for-selected="name">-->
+
+            <!--<bss-home name="home" user="[[user]]">-->
+                <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+            <!--</bss-home>-->
+            <!--<bss-test-create name="create" user="[[user]]">-->
+                <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+            <!--</bss-test-create>-->
+            <!--<bss-test-list name="list" user="[[user]]">-->
+                <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+            <!--</bss-test-list>-->
+
+            <!--&lt;!&ndash;<recipe-list name="create">&ndash;&gt;-->
+            <!--&lt;!&ndash;<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</recipe-list>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<recipe-list name="list">&ndash;&gt;-->
+            <!--&lt;!&ndash;<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</recipe-list>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<recipe-list name="trending">&ndash;&gt;-->
+            <!--&lt;!&ndash;<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</recipe-list>&ndash;&gt;-->
+
+
+        <!--</iron-pages>-->
+    <!--</template>-->
+
+<!--</dom-module>-->
+
+<!--<script>-->
+
+    <!--var user = firebase.auth().currentUser;-->
+
+    <!--if (user != null) {-->
+        <!--user.providerData.forEach(function (profile) {-->
+            <!--console.log("Sign-in provider: "+profile.providerId);-->
+            <!--console.log("  Provider-specific UID: "+profile.uid);-->
+            <!--console.log("  Name: "+profile.displayName);-->
+            <!--console.log("  Email: "+profile.email);-->
+            <!--console.log("  Photo URL: "+profile.photoURL);-->
+        <!--});-->
+    <!--}-->
+    <!--Polymer({-->
+        <!--is: "bss-mainpages",-->
+        <!--properties: {-->
+            <!--user: Object,-->
+            <!--_route: Object,-->
+            <!--_subRoute: Object,-->
+            <!--_pageData: {-->
+                <!--type: Object,-->
+                <!--observer: '_pageDataChanged'-->
+            <!--},-->
+            <!--_selectedPage: String,-->
+            <!--_idData: Object,-->
+
+            <!--_scrollPositionMap: {-->
+                <!--type: Object,-->
+                <!--value: function() {-->
+                    <!--return {};-->
+                <!--}-->
+            <!--}-->
+        <!--},-->
+
+        <!--attached: function() {-->
+            <!--this.async(function() {-->
+                <!--if (!this._route.path) {-->
+                    <!--this.set('_route.path', '/home');-->
+                <!--}-->
+            <!--});-->
+        <!--},-->
+
+        <!--_drawerSelected: function() {-->
+            <!--if (!this.$.drawer.persistent) this.$.drawer.close();-->
+        <!--},-->
+
+        <!--/**-->
+         <!--* Preserves the document scroll position, so-->
+         <!--* it can be restored when returning to a page.-->
+         <!--*/-->
+        <!--_pageDataChanged: function(pageData, oldPageData) {-->
+            <!--var map = this._scrollPositionMap;-->
+
+            <!--if (oldPageData != null && oldPageData.page != null) {-->
+                <!--map[oldPageData.page] = window.pageYOffset;-->
+            <!--}-->
+            <!--this._selectedPage = pageData.page;-->
+            <!--if (map[pageData.page] != null) {-->
+                <!--Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });-->
+            <!--} else if (this.isAttached) {-->
+                <!--Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });-->
+            <!--}-->
+        <!--}-->
+
+    <!--});-->
+
+<!--</script>-->
+
+
+
+
