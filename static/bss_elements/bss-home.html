@@ -2,41 +2,6 @@
     <template>
 
         <style>
-            app-header {
-                color: #fff;
-                background-color: #00AA8D;
-            }
-            app-toolbar {
-                height: 120px;
-            }
-            [condensed-title] {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-image: url('//app-layout-assets.appspot.com/assets/pesto/logo_m.png');
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 90px;
-                /* The difference in font size is used to calculate the scale of the title in the transition. */
-                font-size: 16px;
-            }
-            [main-title] {
-                position: absolute;
-                top: -120px;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-image: url('//app-layout-assets.appspot.com/assets/pesto/logo_l.png');
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: 240px;
-                -webkit-transform-origin: center top !important;
-                transform-origin: center top !important;
-                /* The difference in font size is used to calculate the scale of the title in the transition. */
-                font-size: 32px;
-            }
             .content {
                 display: block;
                 position: relative;
@@ -106,24 +71,14 @@
         </style>
 
         <h4>Home</h4>
-        <!--&lt;!&ndash; main panel &ndash;&gt;-->
-        <!--<app-header-layout>-->
 
-            <!--<app-header effects="resize-title" condenses fixed shadow slot="header">-->
-                <!--<app-toolbar class="top-toolbar">-->
-                    <!--<slot name="drawer-toggle"></slot>-->
-                    <!--<div condensed-title></div>-->
-                <!--</app-toolbar>-->
-                <!--<app-toolbar class="bottom-toolbar">-->
-                    <!--<div main-title></div>-->
-                <!--</app-toolbar>-->
-            <!--</app-header>-->
 
-            <!--<div class="content">-->
-               <!--<p>Hello world</p>-->
-            <!--</div>-->
+        <div class="content">
+            <template is="dom-if" if="[[user]]">
+                <h2>[[user.displayName]]'s workspace</h2>
+            </template>
+        </div>
 
-        <!--</app-header-layout>-->
 
     </template>
 
@@ -133,6 +88,10 @@
     Polymer({
         is: "bss-home",
         properties: {
+
+            user: {
+                type: Object
+            },
 
         },
 

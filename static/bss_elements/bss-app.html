@@ -26,20 +26,35 @@
                 user="{{user}}">
         </firebase-auth>
 
-        <bss-toolbar
-                signed-in="[[signedIn]]"
-                on-sign-out="signOut">
-        </bss-toolbar>
+        <app-drawer-layout responsive-width="1280px">
+            <app-drawer id="drawer" swipe-open slot="drawer">
+                <bss-sidebar
+                        signed-in="[[signedIn]]"
+                        on-sign-out="signOut"
+                        user="[[user]]">
+                </bss-sidebar>
+            </app-drawer>
 
-        <bss-login
-                on-sign-in="signIn"
-                signed-in="[[signedIn]]"
-                disabled="[[!online]]">
-        </bss-login>
+            <app-header-layout style="margin:-8px;">
+                <app-header>
+                    <bss-toolbar
+                            signed-in="[[signedIn]]"
+                            on-sign-out="signOut">
+                    </bss-toolbar>
 
-        <bss-layout></bss-layout>
+                    <bss-login
+                            on-sign-in="signIn"
+                            signed-in="[[signedIn]]"
+                            disabled="[[!online]]">
+                    </bss-login>
+
+                    <bss-layout user="[[user]]"></bss-layout>
+                </app-header>
+            </app-header-layout>
 
 
+
+        </app-drawer-layout>
 
     </template>
 
@@ -64,6 +79,10 @@
 
         signIn: function() {
             this.$.auth.signInWithPopup();
+        },
+
+        signOut: function() {
+            this.$.auth.signOut();
         }
 
     });

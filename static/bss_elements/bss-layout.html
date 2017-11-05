@@ -1,249 +1,122 @@
-<!--<dom-module id="bss-layout">-->
-    <!--<template>-->
-
-        <!--<style>-->
-            <!--:host {-->
-                <!--&#45;&#45;paper-font-common-base: {-->
-                    <!--font-family: Raleway, sans-serif;-->
-                <!--};-->
-            <!--}-->
-            <!--app-drawer-layout:not([narrow]) [drawer-toggle] {-->
-                <!--display: none;-->
-            <!--}-->
-            <!--.avatar-container {-->
-                <!--position: relative;-->
-                <!--border: 2px solid #00AA8D;-->
-                <!--border-radius: 50%;-->
-                <!--height: 90px;-->
-                <!--padding: 2px;-->
-                <!--width: 90px;-->
-                <!--margin: 20px auto;-->
-            <!--}-->
-            <!--.avatar-container .image {-->
-                <!--background-image: url('/static/favicon.ico');-->
-                <!--background-size: contain;-->
-                <!--border-radius: 50%;-->
-                <!--height: 100%;-->
-                <!--width: 100%;-->
-            <!--}-->
-            <!--.contact-info {-->
-                <!--margin: 0 20px;-->
-                <!--padding-bottom: 20px;-->
-                <!--border-bottom: 1px solid #CCC;-->
-                <!--text-align: center;-->
-            <!--}-->
-            <!--.contact-info .name {-->
-                <!--font-weight: bold;-->
-            <!--}-->
-            <!--.contact-info .email {-->
-                <!--color: #999;-->
-            <!--}-->
-            <!--paper-item {-->
-                <!--height: 54px;-->
-            <!--}-->
-            <!--paper-item > a {-->
-                <!--width: 100%;-->
-                <!--height: 100%;-->
-                <!--line-height: 54px;-->
-                <!--text-align: center;-->
-                <!--text-decoration: none;-->
-                <!--color: black;-->
-            <!--}-->
-            <!--paper-icon-button {-->
-                <!--&#45;&#45;paper-icon-button-ink-color: white;-->
-            <!--}-->
-        <!--</style>-->
-
-        <!--<firebase-auth user="{{user}}"></firebase-auth>-->
-
-        <!--<app-location route="{{_route}}" use-hash-as-path></app-location>-->
-        <!--<app-route-->
-                <!--route="{{_route}}"-->
-                <!--pattern="/:page"-->
-                <!--data="{{_pageData}}"-->
-                <!--tail="{{_subRoute}}"></app-route>-->
-        <!--<app-route-->
-                <!--route="{{_subRoute}}"-->
-                <!--pattern="/:id"-->
-                <!--data="{{_idData}}"></app-route>-->
-
-
-        <!--<app-drawer-layout responsive-width="1280px" hidden$="[[!user]]">-->
-
-            <!--<app-drawer id="drawer" swipe-open slot="drawer">-->
-                <!--<app-header-layout has-scrolling-region>-->
-
-                    <!--<app-header fixed slot="header">-->
-                        <!--<div class="avatar-container">-->
-                            <!--<div class="image"></div>-->
-                        <!--</div>-->
-                        <!--<div class="contact-info">-->
-                            <!--<div class="name">Unicorn</div>-->
-                            <!--<div class="email">unicorn@unicorn.com</div>-->
-                        <!--</div>-->
-                    <!--</app-header>-->
-
-                    <!--&lt;!&ndash; nav menu &ndash;&gt;-->
-                    <!--&lt;!&ndash; Two way binding to the selected property has been removed due to polymer/issues/4405 &ndash;&gt;-->
-                    <!--<paper-listbox-->
-                            <!--selected="[[_pageData.page]]"-->
-                            <!--attr-for-selected="name"-->
-                            <!--on-iron-activate="_drawerSelected">-->
-                        <!--<paper-item name="home">-->
-                            <!--<a href="#/home" name="name">Home</a>-->
-                        <!--</paper-item>-->
-                        <!--<paper-item name="create">-->
-                            <!--<a href="#/create" name="name">Create Test</a>-->
-                        <!--</paper-item>-->
-                        <!--<paper-item name="list">-->
-                            <!--<a href="#/list" name="name">Test List</a>-->
-                        <!--</paper-item>-->
-                        <!--<paper-item name="sign">-->
-                        <!--<a href="#/sign" name="name">Sign Op</a>-->
-                        <!--</paper-item>-->
-                    <!--</paper-listbox>-->
-                <!--</app-header-layout>-->
-            <!--</app-drawer>-->
-
-            <!--<iron-pages selected="[[_selectedPage]]" attr-for-selected="name">-->
-
-                <!--<bss-home name="home">-->
-                    <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
-                <!--</bss-home>-->
-                <!--<bss-test-create name="create">-->
-                    <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
-                <!--</bss-test-create>-->
-                <!--<bss-test-list name="list">-->
-                    <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
-                <!--</bss-test-list>-->
-                <!--<bss-login name="sign">-->
-                <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
-                <!--</bss-login>-->
-
-                <!--&lt;!&ndash;<recipe-list name="create">&ndash;&gt;-->
-                <!--&lt;!&ndash;<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>&ndash;&gt;-->
-                <!--&lt;!&ndash;</recipe-list>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;<recipe-list name="list">&ndash;&gt;-->
-                <!--&lt;!&ndash;<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>&ndash;&gt;-->
-                <!--&lt;!&ndash;</recipe-list>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;<recipe-list name="trending">&ndash;&gt;-->
-                <!--&lt;!&ndash;<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>&ndash;&gt;-->
-                <!--&lt;!&ndash;</recipe-list>&ndash;&gt;-->
-
-
-            <!--</iron-pages>-->
-
-        <!--</app-drawer-layout>-->
-    <!--</template>-->
-
-<!--</dom-module>-->
-
-<!--<script>-->
-    <!--Polymer({-->
-        <!--is: "bss-layout",-->
-        <!--properties: {-->
-            <!--user: Object,-->
-            <!--recipes: Object,-->
-            <!--_route: Object,-->
-            <!--_subRoute: Object,-->
-            <!--_pageData: {-->
-                <!--type: Object,-->
-                <!--observer: '_pageDataChanged'-->
-            <!--},-->
-            <!--_selectedPage: String,-->
-            <!--_idData: Object,-->
-
-            <!--_scrollPositionMap: {-->
-                <!--type: Object,-->
-                <!--value: function() {-->
-                    <!--return {};-->
-                <!--}-->
-            <!--}-->
-        <!--},-->
-
-        <!--attached: function() {-->
-            <!--this.async(function() {-->
-                <!--if (!this._route.path) {-->
-                    <!--this.set('_route.path', '/home');-->
-                <!--}-->
-            <!--});-->
-        <!--},-->
-
-        <!--_drawerSelected: function() {-->
-            <!--if (!this.$.drawer.persistent) this.$.drawer.close();-->
-        <!--},-->
-
-        <!--/**-->
-         <!--* Preserves the document scroll position, so-->
-         <!--* it can be restored when returning to a page.-->
-         <!--*/-->
-        <!--_pageDataChanged: function(pageData, oldPageData) {-->
-            <!--var map = this._scrollPositionMap;-->
-
-            <!--if (oldPageData != null && oldPageData.page != null) {-->
-                <!--map[oldPageData.page] = window.pageYOffset;-->
-            <!--}-->
-            <!--this._selectedPage = pageData.page;-->
-            <!--if (map[pageData.page] != null) {-->
-                <!--Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });-->
-            <!--} else if (this.isAttached) {-->
-                <!--Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });-->
-            <!--}-->
-        <!--}-->
-
-    <!--});-->
-
-<!--</script>-->
-
-
-
-
 <dom-module id="bss-layout">
     <template>
 
-    <style>
+        <style>
 
-    </style>
-        <h4>Home</h4>
-        <!--&lt;!&ndash; main panel &ndash;&gt;-->
-        <!--<app-header-layout>-->
 
-        <!--<app-header effects="resize-title" condenses fixed shadow slot="header">-->
-        <!--<app-toolbar class="top-toolbar">-->
-        <!--<slot name="drawer-toggle"></slot>-->
-        <!--<div condensed-title></div>-->
-        <!--</app-toolbar>-->
-        <!--<app-toolbar class="bottom-toolbar">-->
-        <!--<div main-title></div>-->
-        <!--</app-toolbar>-->
-        <!--</app-header>-->
+        </style>
 
-        <!--<div class="content">-->
-        <!--<p>Hello world</p>-->
-        <!--</div>-->
+        <firebase-auth user="{{user}}"></firebase-auth>
 
-        <!--</app-header-layout>-->
+        <app-location route="{{_route}}" use-hash-as-path></app-location>
+        <app-route
+                route="{{_route}}"
+                pattern="/:page"
+                data="{{_pageData}}"
+                tail="{{_subRoute}}"></app-route>
+        <app-route
+                route="{{_subRoute}}"
+                pattern="/:id"
+                data="{{_idData}}"></app-route>
 
+        <iron-pages selected="[[_selectedPage]]" attr-for-selected="name">
+
+            <bss-home name="home" user="[[user]]">
+                <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+            </bss-home>
+            <bss-test-create name="create" user="[[user]]">
+                <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+            </bss-test-create>
+            <bss-test-list name="list" user="[[user]]">
+                <paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>
+            </bss-test-list>
+
+            <!--<recipe-list name="create">-->
+            <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+            <!--</recipe-list>-->
+
+            <!--<recipe-list name="list">-->
+            <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+            <!--</recipe-list>-->
+
+            <!--<recipe-list name="trending">-->
+            <!--<paper-icon-button icon="app:menu" drawer-toggle slot="drawer-toggle"></paper-icon-button>-->
+            <!--</recipe-list>-->
+
+
+        </iron-pages>
     </template>
 
-
-    <script>
-
-        Polymer({
-            is: "bss-layout",
-            properties: {
-
-            },
-
-        });
-
-
-
-    </script>
-
-
-
-
 </dom-module>
+
+<script>
+
+    var user = firebase.auth().currentUser;
+
+    if (user != null) {
+        user.providerData.forEach(function (profile) {
+            console.log("Sign-in provider: "+profile.providerId);
+            console.log("  Provider-specific UID: "+profile.uid);
+            console.log("  Name: "+profile.displayName);
+            console.log("  Email: "+profile.email);
+            console.log("  Photo URL: "+profile.photoURL);
+        });
+    }
+    Polymer({
+        is: "bss-layout",
+        properties: {
+            user: Object,
+            _route: Object,
+            _subRoute: Object,
+            _pageData: {
+                type: Object,
+                observer: '_pageDataChanged'
+            },
+            _selectedPage: String,
+            _idData: Object,
+
+            _scrollPositionMap: {
+                type: Object,
+                value: function() {
+                    return {};
+                }
+            }
+        },
+
+        attached: function() {
+            this.async(function() {
+                if (!this._route.path) {
+                    this.set('_route.path', '/home');
+                }
+            });
+        },
+
+        _drawerSelected: function() {
+            if (!this.$.drawer.persistent) this.$.drawer.close();
+        },
+
+        /**
+         * Preserves the document scroll position, so
+         * it can be restored when returning to a page.
+         */
+        _pageDataChanged: function(pageData, oldPageData) {
+            var map = this._scrollPositionMap;
+
+            if (oldPageData != null && oldPageData.page != null) {
+                map[oldPageData.page] = window.pageYOffset;
+            }
+            this._selectedPage = pageData.page;
+            if (map[pageData.page] != null) {
+                Polymer.AppLayout.scroll({ top: map[pageData.page], behavior: 'silent' });
+            } else if (this.isAttached) {
+                Polymer.AppLayout.scroll({ top: 0, behavior: 'silent' });
+            }
+        }
+
+    });
+
+</script>
+
+
+
+
