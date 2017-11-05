@@ -10,20 +10,38 @@
 
         </style>
 
-        <firebase-app auth-domain="bss-app-5e2a0.firebaseapp.com"
-                      database-url="https://bss-app-5e2a0.firebaseio.com"
-                      api-key="AIzaSyBpEg71NVOJ_PLh6sZcKsLm9np04fF2l6I">
+        <firebase-app api-key = "AIzaSyBpEg71NVOJ_PLh6sZcKsLm9np04fF2l6I"
+                        auth-domain = "bss-app-5e2a0.firebaseapp.com"
+                        database-url = "https://bss-app-5e2a0.firebaseio.com"
+                        storage-bucket = "bss-app-5e2a0.appspot.com"
+                        messaging-sender-id = "225086584681"
+                        name="bss">
         </firebase-app>
-        <bss-login id="login"></bss-login>
-        <bss-layout id="main"></bss-layout>
+
+        <firebase-auth
+                id="auth"
+                app-name="bss"
+                provider="google"
+                signed-in="{{signedIn}}"
+                user="{{user}}">
+        </firebase-auth>
+
+        <bss-toolbar
+                signed-in="[[signedIn]]"
+                on-sign-out="signOut">
+        </bss-toolbar>
+
+        <bss-login
+                on-sign-in="signIn"
+                signed-in="[[signedIn]]"
+                disabled="[[!online]]">
+        </bss-login>
+
+        <bss-layout></bss-layout>
+
 
 
     </template>
-
-</dom-module>
-
-
-<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 
 <script>
     // Initialize Firebase
@@ -40,46 +58,18 @@
 
 
 <script>
-    class BssApp extends Polymer.Element {
-        static get is() {
-            return 'bss-app';
+    Polymer({
+        is: 'bss-app',
+        behaviors: [Polymer.BssAppBehavior],
+
+        signIn: function() {
+            this.$.auth.signInWithPopup();
         }
 
-        static get config() {
-            return {
-                properties: {
-                },
-            }
-        }
-        connectedCallback() {
-            super.connectedCallback();
-            requestAnimationFrame(this._installListeners.bind(this));
-        }
-        _installListeners() {
-            window.addEventListener('auth-changed', this._onAuthChanged.bind(this));
-        }
-
-
-        _onAuthChanged(data){
-            var user = data.detail.user;
-            var el = this;
-            if(!!user){
-                Polymer.Utils.importHref(
-                    this.resolveUrl('bss-layout.html'), function(){
-                        el.$.login.hidden = true;
-                        el.$.main.hidden = false;
-                        el.$.main.resizeHeader();
-                    });
-
-            }else{
-                this.$.login.hidden = false;
-                this.$.main.hidden = true;
-            }
-        }
-    }
-    customElements.define(BssApp.is, BssApp);
+    });
 </script>
 
 
+</dom-module>
 
 

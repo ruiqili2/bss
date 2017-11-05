@@ -3,76 +3,62 @@
 
         <style>
 
+            :host {
+                position: absolute;
+                top: 46px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--paper-purple-500);
+                transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1;
+                color: var(--paper-purple-50);
+                @apply(--layout);
+                @apply(--layout-center-center);
+            }
+            :host([signed-in]) {
+                opacity: 0;
+                pointer-events: none;
+            }
+            paper-button > * {
+                vertical-align: middle;
+                text-transform: none;
+            }
+
         </style>
 
-        <h3>login</h3>
 
-        <firebase-auth id="authElement" user="{{user}}"
-                       status-known="{{statusKnown}}" provider="google">
-        </firebase-auth>
-
-
-        <paper-button class="signInButton" raised on-tap="signin" hidden$="[[user]]"><img src="images/google.svg">Sign In
+        <paper-button on-tap="signIn" disabled="[[disabled]]">
+            <iron-icon icon="account-circle"></iron-icon>
+            <span>Sign in with Google</span>
         </paper-button>
-        <paper-button id="signout" raised on-tap="signout" hidden$="[[!user]]">Sign Out</paper-button>
+        <!--<paper-button id="signout" raised on-tap="signout" hidden$="[[!user]]">Sign Out</paper-button>-->
 
     </template>
 
-</dom-module>
 
 <script>
-
-    class BssLogin extends Polymer.Element {
-        static get is() {
-            return 'bss-login';
+    Polymer({
+        is: 'bss-login',
+        properties: {
+            disabled: {
+                type: Boolean,
+                reflectToAttribute: true,
+                value: false
+            },
+            signedIn: {
+                type: Boolean,
+                reflectToAttribute: true,
+                value: false
+            }
+        },
+        signIn: function() {
+            this.fire('sign-in', null, { bubbles: false });
         }
-
-        static get config() {
-            return {
-                properties: {
-
-                }
-            };
-        }
-        signin() {
-            return this.$.authElement.signInWithPopup();
-        }
-
-        connectedCallback() {
-            super.connectedCallback();
-            requestAnimationFrame(this._installListeners.bind(this));
-        }
-
-        _installListeners() {
-            this.$.authElement.auth
-                .onAuthStateChanged(this._authStateChanged.bind(this));
-
-            window.addEventListener('signout', this._onSignout.bind(this));
-        }
-
-        _authStateChanged() {
-            this.$.authElement.fire('auth-changed', {
-                user: this.user
-            });
-        }
-
-
-        _onSignout() {
-            return this.$.authElement.signOut();
-        }
-
-        signout() {
-            this.$.signout.fire('signout');
-        }
-
-
-    }
-    customElements.define(BssLogin.is, BssLogin);
-
-
+    });
 
 </script>
 
-
+</dom-module>
 
 
