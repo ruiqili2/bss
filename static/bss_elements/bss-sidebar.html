@@ -55,7 +55,11 @@
         </style>
         <app-header fixed slot="header">
             <div class="avatar-container">
-                <div class="image"></div>
+                <iron-image
+                        style="width:60px; height:60px;"
+                        sizing="cover"
+                        src="[[_returnPic(user)]]"></iron-image>
+
             </div>
             <div class="contact-info">
                 <div class="name">[[_returnName(user)]]</div>
@@ -102,6 +106,15 @@
                 }
                 else {
                     return profile.displayName;
+                }
+            },
+
+            _returnPic: function(profile) {
+                if(profile === null) {
+                    return "/static/favicon.ico";
+                }
+                else {
+                    return profile.photoURL;
                 }
             }
 
