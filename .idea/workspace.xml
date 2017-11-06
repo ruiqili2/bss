@@ -4,7 +4,6 @@
     <list default="true" id="187a0a93-cc45-4a3b-bd7e-fd11617504f6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bss_elements/bss-sidebar.html" afterPath="$PROJECT_DIR$/static/bss_elements/bss-sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/bss_elements/bss-test-create.html" afterPath="$PROJECT_DIR$/static/bss_elements/bss-test-create.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bss-sidebar.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bss-sidebar.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-sidebar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2260">
-              <caret line="113" column="35" lean-forward="false" selection-start-line="113" selection-start-column="35" selection-end-line="113" selection-end-column="35" />
+            <state relative-caret-position="1220">
+              <caret line="61" column="37" lean-forward="true" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#iron-image#0;n#div#0;n#app-header#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
               </folding>
@@ -86,18 +85,18 @@
       <file leaf-file-name="bss-home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
+            <state relative-caret-position="-140">
               <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bss-test-create.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bss-test-create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-test-create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+            <state relative-caret-position="280">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,8 +149,8 @@
         <option value="$PROJECT_DIR$/static/bss_elements/bss-mainpages.html" />
         <option value="$PROJECT_DIR$/static/elements.html" />
         <option value="$PROJECT_DIR$/static/bss_elements/bss-app.html" />
-        <option value="$PROJECT_DIR$/static/bss_elements/bss-sidebar.html" />
         <option value="$PROJECT_DIR$/static/bss_elements/bss-test-create.html" />
+        <option value="$PROJECT_DIR$/static/bss_elements/bss-sidebar.html" />
       </list>
     </option>
   </component>
@@ -369,12 +368,12 @@
       <workItem from="1509824591972" duration="5466000" />
       <workItem from="1509833323073" duration="1325000" />
       <workItem from="1509834691705" duration="17590000" />
-      <workItem from="1509920144099" duration="3934000" />
+      <workItem from="1509920144099" duration="4158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43563000" />
+    <option name="totallyTimeSpent" value="43787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
@@ -763,24 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1400">
-          <caret line="70" column="41" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="38" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#app-header-layout#0;n#app-drawer-layout#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-toolbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -805,21 +786,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-sidebar.html">
+    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-test-create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2260">
-          <caret line="113" column="35" lean-forward="false" selection-start-line="113" selection-start-column="35" selection-end-line="113" selection-end-column="35" />
+        <state relative-caret-position="280">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="70" column="41" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="38" selection-end-column="52" />
           <folding>
-            <element signature="n#style#0;n#iron-image#0;n#div#0;n#app-header#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#app-header-layout#0;n#app-drawer-layout#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-test-create.html">
+    <entry file="file://$PROJECT_DIR$/static/bss_elements/bss-sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="1220">
+          <caret line="61" column="37" lean-forward="true" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#iron-image#0;n#div#0;n#app-header#0;n#template#0;n#dom-module#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

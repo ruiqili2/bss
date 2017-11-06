@@ -56,7 +56,10 @@
         <app-header fixed slot="header">
             <div class="avatar-container">
                 <iron-image
-                        style="width:60px; height:60px;"
+                        style="background-size: contain;
+                        border-radius: 50%;
+                        height: 100%;
+                        width: 100%;"
                         sizing="cover"
                         src="[[_returnPic(user)]]"></iron-image>
 
