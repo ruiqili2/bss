@@ -8,8 +8,8 @@
         <h3>Create Test</h3>
         <iron-form id="createTestForm">
             <form action="/foo" method="get">
-                <paper-input type="text" name="name" required label="Test Name" value="" required></paper-input>
-                <paper-input type="text" name="number" required label="Question Number" value="" required></paper-input>
+                <paper-input id="testname" type="text" name="name" required label="Test Name" value="" required></paper-input>
+                <paper-input id="quesnum" type="text" name="number" required label="Question Number" value="" required></paper-input>
 
                 <br><br>
 
@@ -40,15 +40,8 @@
         },
         _submitJob: function(event){
             var formdata = new FormData();
-            formdata.append('csvfile', this.$.file.files[0]);
-            formdata.append('xsize', document.getElementById("xsizeSlider").value);
-            formdata.append('ysize', document.getElementById("ysizeSlider").value);
-            formdata.append('list_only', document.getElementById("onlyreturnlist").checked);
-            formdata.append('send_email', document.getElementById("sendemail").checked);
-            formdata.append('email', document.getElementById("validemail").value);
-            formdata.append('name', document.getElementById("validname").value);
-            formdata.append('submit_type', this.submit_type);
-            formdata.append('values',document.getElementById("enteredPositions").value);
+            formdata.append('testname', document.getElementById("testname").value);
+            formdata.append('quesnum', document.getElementById("quesnum").value);
 
             $.ajax({
                 url: '/bss/create/',
@@ -62,6 +55,14 @@
                 processData: false
             });
         },
+
+        completeHandler: function() {
+            console.log("YESSSS");
+        },
+
+        errorHandler: function(){
+            console.log("NOOOO");
+        }
 
     });
 
