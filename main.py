@@ -21,7 +21,7 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/", MainHandler),
-            (r"/bss/create", api.CreateHandler),
+            (r"/bss/create/", api.CreateHandler),
         ]
         settings = {
             "template_path": Settings.TEMPLATE_PATH,

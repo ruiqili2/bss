@@ -8,16 +8,33 @@
         <h3>Create Test</h3>
         <iron-form id="createTestForm">
             <form action="/foo" method="get">
-                <paper-input id="testname" type="text" name="name" required label="Test Name" value="" required></paper-input>
-                <paper-input id="quesnum" type="text" name="number" required label="Question Number" value="" required></paper-input>
+                <paper-input id="testname" type="text"
+                             name="name"
+                             required
+                             label="Test Name"
+                             value=""
+                             placeholder="Please enter your test name"
+                             always-float-label></paper-input>
+
+                <paper-input id="quesnum"
+                             type="text"
+                             name="number"
+                             required
+                             label="Question Number"
+                             placeholder="1, 2, 3, ..., 60"
+                             value=""
+                             always-float-label
+                             auto-validate
+                             pattern="^[0-9]?$|[1-5][0-9]?$|^60$"
+                             error-message="Please enter a number between 1 and 60"></paper-input>
 
                 <br><br>
 
                 <paper-checkbox name="read" required>You must check this box</paper-checkbox>
 
-                <br><br>
+                <br>
 
-                <paper-button raised onclick="createTestForm.submit()">
+                <paper-button raised onclick=createTestForm.submit()>
                     <paper-spinner id="spinner" hidden></paper-spinner>
                     Submit
                 </paper-button>
@@ -26,22 +43,25 @@
             </form>
             <br>
         </iron-form>
+
         <!--<paper-input></paper-input>-->
     </template>
 
 
 
 <script>
-
-    Polymer({
-        is: "bss-test-create",
-        properties: {
-
-        },
-        _submitJob: function(event){
+    window.addEventListener('WebComponentsReady', function(e) {
+        // imports are loaded and elements have been registered
+        createTestForm.addEventListener('iron-form-submit', function(event) {
+            console.log("Now you see me!");
             var formdata = new FormData();
-            formdata.append('testname', document.getElementById("testname").value);
-            formdata.append('quesnum', document.getElementById("quesnum").value);
+            var tname = document.getElementById("testname").value;
+            var qnum = document.getElementById("quesnum").value;
+            formdata.append('testname', tname);
+            formdata.append('quesnum', qnum);
+            console.log('testname', tname);
+            console.log('quesnum', qnum);
+
 
             $.ajax({
                 url: '/bss/create/',
@@ -54,6 +74,13 @@
                 contentType: false,
                 processData: false
             });
+        })
+    });
+
+    Polymer({
+        is: "bss-test-create",
+        properties: {
+
         },
 
         completeHandler: function() {
@@ -66,9 +93,6 @@
 
     });
 
-    createTestForm.addEventListener('iron-form-submit', function(event) {
-        this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
-    })
 
 </script>
 

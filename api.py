@@ -21,9 +21,11 @@ class BaseHandler(tornado.web.RequestHandler):
 
 
 class CreateHandler(tornado.web.RequestHandler):
-    @tornado.web.asynchronous
-    @tornado.web.authenticated
+    # @tornado.web.asynchronous
+    # @tornado.web.authenticated
     def post(self):
+        # loc_user = self.get_secure_cookie("usera").decode('ascii').replace('\"', '')
+        # loc_passw = self.get_secure_cookie("userb").decode('ascii').replace('\"', '')
         print "receive create request"
 
 class FileHandler(BaseHandler):
